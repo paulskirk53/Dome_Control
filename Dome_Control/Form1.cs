@@ -42,8 +42,20 @@ namespace Dome_Control
         {
             try
             {
-                GD.Connected = true;     //connect te two ports via the driver's method
+                // i think we need this in addition to the line below
+                /*
+                 if (!gd.connected)
+                 {
+                 GD.Connected = true;     //connect te two ports via the driver's method
                 SlewingTimer.Start();
+                 }
+                 else
+                 {
+                 messagebox already connected just click ok
+                 }
+                 */
+                GD.Connected = true;     //connect te two ports via the driver's method
+               // SlewingTimer.Start();
             }
             catch
             {
