@@ -16,21 +16,24 @@ namespace Dome_Control
         {
             InitializeComponent();
         }
-
+        
         ASCOM.GowerCDome.Dome GD = new ASCOM.GowerCDome.Dome();
         
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             LBLName.Text = GD.Name;
-            if(GD.Connected)
+            
+
+            if (GD.Connected) 
             {
                 LBLConnected.Text = "Connected";
             }
             else
             {
-                LBLConnected.Text = "awaiting connection";
+                LBLConnected.Text = "Not connected";
             }
         }
         private void LBLName_Click(object sender, EventArgs e)
@@ -42,29 +45,34 @@ namespace Dome_Control
         {
             try
             {
-                // i think we need this in addition to the line below
-                /*
-                 if (!gd.connected)
+                 //i think we need this in addition to the line below
+                
+                 if (!GD.Connected)
                  {
-                 GD.Connected = true;     //connect te two ports via the driver's method
-                SlewingTimer.Start();
+                   GD.Connected = true;     //connect te two ports via the driver's method
+                   SlewingTimer.Start();
                  }
                  else
                  {
-                 messagebox already connected just click ok
+                    MessageBox.Show("Already connected, just press O.K.","Dome Message");   //messagebox already connected just click ok
                  }
-                 */
-                GD.Connected = true;     //connect te two ports via the driver's method
+                 
+                 
+               // GD.Connected = true;     //connect te two ports via the driver's method
+              //  MessageBox.Show("Test" + GD.Connected);
                // SlewingTimer.Start();
             }
             catch
             {
                 Exception ex;
+                MessageBox.Show("exception when trying to connect", "Dome message");
             }
 
             if (GD.Connected)       // update the information label with connected status
             {
+                BTNConnect.Enabled = false;
                 LBLConnected.Text = "Connected";
+              //  MessageBox.Show("connected" + GD.Slewing);
             }
             else
             {
@@ -92,11 +100,12 @@ namespace Dome_Control
         {
             if (GD.Slewing)                                   //update the slewing label
             {
-                LBLSlewing.Text = "Slewing";
+                
+                LBLSlewing.Text = "Dome moving";
             }
             else
             {
-                LBLSlewing.Text = "Not Slewing";                //the property returns true/ false according to whether slewing
+                LBLSlewing.Text = "Dome Stationary";                //the property returns true/ false according to whether slewing
             }
                     LBLAzimuthText.Text = GD.Azimuth.ToString();            //update the aximuth information label
 
@@ -121,21 +130,48 @@ namespace Dome_Control
 
         private void BTNPark_Click(object sender, EventArgs e)
         {
-            GD.Park();                  // the dome parks at 90 degrees - which is set in the driver method.
+            GD.Park();                  // the dome parks.
         }
 
         private void BTNNudgeAntiClock_Click(object sender, EventArgs e)
         {
             double NudgeTo;
-            double.TryParse(MTXTNudgeSize.Text, out NudgeTo);
+            double.TryParse(MTXTAzimuth.Text, out NudgeTo);
             GD.SlewToAzimuth(GD.Azimuth - NudgeTo);            // minus sign for anticlock nudge
         }
 
         private void NudgeClockwise_Click(object sender, EventArgs e)
         {
             double NudgeTo;
-            double.TryParse(MTXTNudgeSize.Text, out NudgeTo);
+            double.TryParse(MTXTAzimuth.Text , out NudgeTo);
             GD.SlewToAzimuth(GD.Azimuth + NudgeTo);            // plus sign for clockwise nudge
+        }
+
+        private void btndisconnect_Click(object sender, EventArgs e)
+        {
+          if(  GD.Connected)
+            {
+                GD.Connected = false;
+            }
+            LBLConnected.Text = "Not Connected";
+            btndisconnect.Enabled = false;
+            BTNConnect.Enabled = true;
+        }
+
+        private void BTNSync_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnsetpark_Click(object sender, EventArgs e)
+        {
+            
+            GD.SetPark();
+        }
+
+        private void LBLSlewing_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
