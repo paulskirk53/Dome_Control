@@ -114,7 +114,7 @@ namespace Dome_Control
             string str = GD.ShutterStatus.ToString();
             int startIndex = 7;
             int endIndex = str.Length - 7;
-           lblshutterstate.Text  = str.Substring(startIndex, endIndex);
+           lblshutterstate.Text  = "Shutter " + str.Substring(startIndex, endIndex);
 
 
            // LBLShutterText.Text = GD.ShutterStatus.ToString();
@@ -151,6 +151,7 @@ namespace Dome_Control
         {
           if(  GD.Connected)
             {
+                SlewingTimer.Enabled = false;
                 GD.Connected = false;
                 
             }
