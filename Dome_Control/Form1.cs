@@ -72,7 +72,7 @@ namespace Dome_Control
             {
                 BTNConnect.Enabled = false;
                 LBLConnected.Text = "Connected";
-              //  MessageBox.Show("connected" + GD.Slewing);
+                btndisconnect.Enabled = true;
             }
             else
             {
@@ -114,7 +114,7 @@ namespace Dome_Control
             string str = GD.ShutterStatus.ToString();
             int startIndex = 7;
             int endIndex = str.Length - 7;
-            LBLShutterText.Text = str.Substring(startIndex, endIndex);
+           lblshutterstate.Text  = str.Substring(startIndex, endIndex);
 
 
            // LBLShutterText.Text = GD.ShutterStatus.ToString();
@@ -152,6 +152,7 @@ namespace Dome_Control
           if(  GD.Connected)
             {
                 GD.Connected = false;
+                
             }
             LBLConnected.Text = "Not Connected";
             btndisconnect.Enabled = false;

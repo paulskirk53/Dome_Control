@@ -31,9 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.DOMEPicture = new System.Windows.Forms.PictureBox();
             this.ASCOMLogo = new System.Windows.Forms.PictureBox();
-            this.LblShutter = new System.Windows.Forms.Label();
             this.LBLAzimuth = new System.Windows.Forms.Label();
-            this.LBLShutterText = new System.Windows.Forms.Label();
             this.LBLAzimuthText = new System.Windows.Forms.Label();
             this.LBLSlewing = new System.Windows.Forms.Label();
             this.LBLPark = new System.Windows.Forms.Label();
@@ -52,6 +50,7 @@
             this.btndisconnect = new System.Windows.Forms.Button();
             this.btnsetpark = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblshutterstate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DOMEPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ASCOMLogo)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +60,7 @@
             this.DOMEPicture.ImageLocation = "C:\\Users\\Paul\\Desktop\\Observatory build\\Observatory.jpg";
             this.DOMEPicture.Location = new System.Drawing.Point(10, 11);
             this.DOMEPicture.Name = "DOMEPicture";
-            this.DOMEPicture.Size = new System.Drawing.Size(183, 96);
+            this.DOMEPicture.Size = new System.Drawing.Size(156, 96);
             this.DOMEPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.DOMEPicture.TabIndex = 0;
             this.DOMEPicture.TabStop = false;
@@ -76,48 +75,25 @@
             this.ASCOMLogo.TabIndex = 1;
             this.ASCOMLogo.TabStop = false;
             // 
-            // LblShutter
-            // 
-            this.LblShutter.AutoSize = true;
-            this.LblShutter.BackColor = System.Drawing.Color.Black;
-            this.LblShutter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblShutter.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LblShutter.Location = new System.Drawing.Point(15, 119);
-            this.LblShutter.Name = "LblShutter";
-            this.LblShutter.Size = new System.Drawing.Size(93, 18);
-            this.LblShutter.TabIndex = 2;
-            this.LblShutter.Text = "Shutter State";
-            // 
             // LBLAzimuth
             // 
             this.LBLAzimuth.AutoSize = true;
             this.LBLAzimuth.BackColor = System.Drawing.Color.Black;
-            this.LBLAzimuth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLAzimuth.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLAzimuth.Location = new System.Drawing.Point(15, 150);
             this.LBLAzimuth.Name = "LBLAzimuth";
-            this.LBLAzimuth.Size = new System.Drawing.Size(110, 18);
+            this.LBLAzimuth.Size = new System.Drawing.Size(78, 13);
             this.LBLAzimuth.TabIndex = 3;
             this.LBLAzimuth.Text = "Dome Azimuth:";
-            // 
-            // LBLShutterText
-            // 
-            this.LBLShutterText.AutoSize = true;
-            this.LBLShutterText.BackColor = System.Drawing.Color.Black;
-            this.LBLShutterText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLShutterText.Location = new System.Drawing.Point(110, 121);
-            this.LBLShutterText.Name = "LBLShutterText";
-            this.LBLShutterText.Size = new System.Drawing.Size(56, 16);
-            this.LBLShutterText.TabIndex = 4;
-            this.LBLShutterText.Text = " Waiting";
             // 
             // LBLAzimuthText
             // 
             this.LBLAzimuthText.AutoSize = true;
             this.LBLAzimuthText.BackColor = System.Drawing.Color.Black;
-            this.LBLAzimuthText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLAzimuthText.Location = new System.Drawing.Point(131, 150);
+            this.LBLAzimuthText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLAzimuthText.Location = new System.Drawing.Point(125, 150);
             this.LBLAzimuthText.Name = "LBLAzimuthText";
-            this.LBLAzimuthText.Size = new System.Drawing.Size(36, 18);
+            this.LBLAzimuthText.Size = new System.Drawing.Size(28, 13);
             this.LBLAzimuthText.TabIndex = 5;
             this.LBLAzimuthText.Text = "0.00";
             // 
@@ -126,7 +102,7 @@
             this.LBLSlewing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.LBLSlewing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLSlewing.ForeColor = System.Drawing.Color.Black;
-            this.LBLSlewing.Location = new System.Drawing.Point(173, 131);
+            this.LBLSlewing.Location = new System.Drawing.Point(181, 131);
             this.LBLSlewing.Name = "LBLSlewing";
             this.LBLSlewing.Size = new System.Drawing.Size(99, 20);
             this.LBLSlewing.TabIndex = 6;
@@ -139,7 +115,7 @@
             this.LBLPark.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.LBLPark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLPark.ForeColor = System.Drawing.Color.Black;
-            this.LBLPark.Location = new System.Drawing.Point(173, 152);
+            this.LBLPark.Location = new System.Drawing.Point(181, 152);
             this.LBLPark.Name = "LBLPark";
             this.LBLPark.Size = new System.Drawing.Size(99, 20);
             this.LBLPark.TabIndex = 8;
@@ -267,7 +243,7 @@
             // MTXTAzimuth
             // 
             this.MTXTAzimuth.Location = new System.Drawing.Point(101, 192);
-            this.MTXTAzimuth.Mask = "999";
+            this.MTXTAzimuth.Mask = "000";
             this.MTXTAzimuth.Name = "MTXTAzimuth";
             this.MTXTAzimuth.Size = new System.Drawing.Size(54, 20);
             this.MTXTAzimuth.TabIndex = 25;
@@ -298,12 +274,25 @@
             this.btnsetpark.UseVisualStyleBackColor = true;
             this.btnsetpark.Click += new System.EventHandler(this.btnsetpark_Click);
             // 
+            // lblshutterstate
+            // 
+            this.lblshutterstate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblshutterstate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblshutterstate.ForeColor = System.Drawing.Color.Black;
+            this.lblshutterstate.Location = new System.Drawing.Point(181, 111);
+            this.lblshutterstate.Name = "lblshutterstate";
+            this.lblshutterstate.Size = new System.Drawing.Size(99, 20);
+            this.lblshutterstate.TabIndex = 29;
+            this.lblshutterstate.Text = "Shutter Status";
+            this.lblshutterstate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(284, 460);
+            this.Controls.Add(this.lblshutterstate);
             this.Controls.Add(this.btnsetpark);
             this.Controls.Add(this.btndisconnect);
             this.Controls.Add(this.MTXTAzimuth);
@@ -320,9 +309,7 @@
             this.Controls.Add(this.LBLPark);
             this.Controls.Add(this.LBLSlewing);
             this.Controls.Add(this.LBLAzimuthText);
-            this.Controls.Add(this.LBLShutterText);
             this.Controls.Add(this.LBLAzimuth);
-            this.Controls.Add(this.LblShutter);
             this.Controls.Add(this.ASCOMLogo);
             this.Controls.Add(this.DOMEPicture);
             this.ForeColor = System.Drawing.Color.White;
@@ -340,9 +327,7 @@
 
         private System.Windows.Forms.PictureBox DOMEPicture;
         private System.Windows.Forms.PictureBox ASCOMLogo;
-        private System.Windows.Forms.Label LblShutter;
         private System.Windows.Forms.Label LBLAzimuth;
-        private System.Windows.Forms.Label LBLShutterText;
         private System.Windows.Forms.Label LBLAzimuthText;
         private System.Windows.Forms.Label LBLSlewing;
         private System.Windows.Forms.Label LBLPark;
@@ -361,6 +346,7 @@
         private System.Windows.Forms.Button btndisconnect;
         private System.Windows.Forms.Button btnsetpark;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lblshutterstate;
     }
 }
 
