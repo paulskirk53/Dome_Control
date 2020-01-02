@@ -57,17 +57,17 @@
             // 
             // DOMEPicture
             // 
-            this.DOMEPicture.ImageLocation = "C:\\Users\\Paul\\Desktop\\Observatory build\\Observatory.jpg";
+            this.DOMEPicture.ImageLocation = "C:\\Dome\\DomeControlVisuals\\Observatory.jpg";
             this.DOMEPicture.Location = new System.Drawing.Point(10, 11);
             this.DOMEPicture.Name = "DOMEPicture";
-            this.DOMEPicture.Size = new System.Drawing.Size(156, 96);
+            this.DOMEPicture.Size = new System.Drawing.Size(156, 120);
             this.DOMEPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.DOMEPicture.TabIndex = 0;
             this.DOMEPicture.TabStop = false;
             // 
             // ASCOMLogo
             // 
-            this.ASCOMLogo.ImageLocation = "C:\\Users\\Paul\\Desktop\\ASCOMLogo\\ASCOM.png";
+            this.ASCOMLogo.ImageLocation = "C:\\Dome\\DomeControlVisuals\\ASCOM.png";
             this.ASCOMLogo.Location = new System.Drawing.Point(224, 11);
             this.ASCOMLogo.Name = "ASCOMLogo";
             this.ASCOMLogo.Size = new System.Drawing.Size(48, 56);
@@ -102,7 +102,7 @@
             this.LBLSlewing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.LBLSlewing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLSlewing.ForeColor = System.Drawing.Color.Black;
-            this.LBLSlewing.Location = new System.Drawing.Point(181, 131);
+            this.LBLSlewing.Location = new System.Drawing.Point(181, 109);
             this.LBLSlewing.Name = "LBLSlewing";
             this.LBLSlewing.Size = new System.Drawing.Size(99, 20);
             this.LBLSlewing.TabIndex = 6;
@@ -115,7 +115,7 @@
             this.LBLPark.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.LBLPark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLPark.ForeColor = System.Drawing.Color.Black;
-            this.LBLPark.Location = new System.Drawing.Point(181, 152);
+            this.LBLPark.Location = new System.Drawing.Point(181, 130);
             this.LBLPark.Name = "LBLPark";
             this.LBLPark.Size = new System.Drawing.Size(99, 20);
             this.LBLPark.TabIndex = 8;
@@ -137,7 +137,7 @@
             // BTNOpen
             // 
             this.BTNOpen.ForeColor = System.Drawing.Color.Black;
-            this.BTNOpen.Location = new System.Drawing.Point(195, 249);
+            this.BTNOpen.Location = new System.Drawing.Point(195, 227);
             this.BTNOpen.Name = "BTNOpen";
             this.BTNOpen.Size = new System.Drawing.Size(77, 27);
             this.BTNOpen.TabIndex = 12;
@@ -149,7 +149,7 @@
             // BTNClose
             // 
             this.BTNClose.ForeColor = System.Drawing.Color.Black;
-            this.BTNClose.Location = new System.Drawing.Point(195, 275);
+            this.BTNClose.Location = new System.Drawing.Point(195, 253);
             this.BTNClose.Name = "BTNClose";
             this.BTNClose.Size = new System.Drawing.Size(77, 27);
             this.BTNClose.TabIndex = 13;
@@ -183,7 +183,7 @@
             // BTNPark
             // 
             this.BTNPark.ForeColor = System.Drawing.Color.Black;
-            this.BTNPark.Location = new System.Drawing.Point(195, 333);
+            this.BTNPark.Location = new System.Drawing.Point(195, 311);
             this.BTNPark.Name = "BTNPark";
             this.BTNPark.Size = new System.Drawing.Size(77, 31);
             this.BTNPark.TabIndex = 18;
@@ -207,7 +207,7 @@
             // LBLName
             // 
             this.LBLName.AutoSize = true;
-            this.LBLName.Location = new System.Drawing.Point(25, 387);
+            this.LBLName.Location = new System.Drawing.Point(25, 366);
             this.LBLName.Name = "LBLName";
             this.LBLName.Size = new System.Drawing.Size(66, 13);
             this.LBLName.TabIndex = 21;
@@ -217,7 +217,7 @@
             // LBLConnected
             // 
             this.LBLConnected.AutoSize = true;
-            this.LBLConnected.Location = new System.Drawing.Point(152, 387);
+            this.LBLConnected.Location = new System.Drawing.Point(152, 366);
             this.LBLConnected.Name = "LBLConnected";
             this.LBLConnected.Size = new System.Drawing.Size(89, 13);
             this.LBLConnected.TabIndex = 22;
@@ -226,7 +226,7 @@
             // BTNConnect
             // 
             this.BTNConnect.ForeColor = System.Drawing.Color.Black;
-            this.BTNConnect.Location = new System.Drawing.Point(195, 191);
+            this.BTNConnect.Location = new System.Drawing.Point(195, 169);
             this.BTNConnect.Name = "BTNConnect";
             this.BTNConnect.Size = new System.Drawing.Size(77, 27);
             this.BTNConnect.TabIndex = 23;
@@ -253,7 +253,7 @@
             // btndisconnect
             // 
             this.btndisconnect.ForeColor = System.Drawing.Color.Black;
-            this.btndisconnect.Location = new System.Drawing.Point(195, 217);
+            this.btndisconnect.Location = new System.Drawing.Point(195, 195);
             this.btndisconnect.Name = "btndisconnect";
             this.btndisconnect.Size = new System.Drawing.Size(77, 27);
             this.btndisconnect.TabIndex = 27;
@@ -265,7 +265,7 @@
             // btnsetpark
             // 
             this.btnsetpark.ForeColor = System.Drawing.Color.Black;
-            this.btnsetpark.Location = new System.Drawing.Point(195, 307);
+            this.btnsetpark.Location = new System.Drawing.Point(195, 285);
             this.btnsetpark.Name = "btnsetpark";
             this.btnsetpark.Size = new System.Drawing.Size(77, 31);
             this.btnsetpark.TabIndex = 28;
@@ -279,7 +279,7 @@
             this.lblshutterstate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lblshutterstate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblshutterstate.ForeColor = System.Drawing.Color.Black;
-            this.lblshutterstate.Location = new System.Drawing.Point(181, 111);
+            this.lblshutterstate.Location = new System.Drawing.Point(181, 89);
             this.lblshutterstate.Name = "lblshutterstate";
             this.lblshutterstate.Size = new System.Drawing.Size(99, 20);
             this.lblshutterstate.TabIndex = 29;
